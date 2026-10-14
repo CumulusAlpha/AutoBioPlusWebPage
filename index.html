@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="DexBioLab: Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories." />
+    <title>DexBioLab</title>
+    <link rel="icon" type="image/png" href="media/2.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-brand" href="#top" aria-label="DexBioLab home"><img class="brand-logo" src="media/DexBioLab_logo.png" alt="DexBioLab" /></a>
+      </div>
+    </header>
+
+    <main class="page-shell" id="top">
+      <div class="page-layout">
+        <aside class="toc" aria-label="Contents">
+          <p class="toc-title">Contents</p>
+          <a class="toc-link active" href="#summary">Summary Video</a>
+          <a class="toc-link" href="#phenomena">Dynamic Experimental Phenomena</a>
+          <a class="toc-link" href="#parallel">Parallel Simulation</a>
+          <a class="toc-link" href="#visualizations">Task Visualizations</a>
+          <a class="toc-link" href="#experiments">Simulation Results</a>
+          <a class="toc-link" href="#real-world-validation">Real-World Results</a>
+          <a class="toc-link" href="#abstract">Abstract</a>
+        </aside>
+
+        <div class="main-column">
+          <section class="paper-header" id="overview">
+        <h1><span>DexBioLab:</span> Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories</h1>
+        <p class="authors">
+          <span class="author-line"><span class="author">Xuanye Wu<sup>1,2,*</sup></span>, <span class="author">Yue Shi<sup>1,*,†</sup></span>, <span class="author">Yongcan Yang<sup>1,4</sup></span>, <span class="author">Yiqun Wang<sup>1,2</sup></span>, <span class="author">Zhaoqi Wan<sup>1,2</sup></span>, <span class="author">Dayu Xia<sup>1</sup></span>, <span class="author">Yanming Shao<sup>1</sup></span></span>
+          <span class="author-line"><span class="author">Jiezhang Cao<sup>3</sup></span>, <span class="author">Xiangfei Li<sup>2,†</sup></span>, <span class="author">Yao Mu<sup>1,3,†</sup></span>, <span class="author">Guangtao Zhai<sup>1,3</sup></span></span>
+        </p>
+        <p class="affiliations"><span><sup>1</sup> Shanghai AI Laboratory</span> · <span><sup>2</sup> Huazhong University of Science and Technology</span><br><span><sup>3</sup> Shanghai Jiao Tong University</span> · <span><sup>4</sup> University of Southern California</span></p>
+        <p class="author-notes">* Equal contribution. &nbsp; † Corresponding authors.</p>
+        <div class="resource-row" id="resources">
+          <a class="resource-pill" href="https://arxiv.org/abs/2610.13643" target="_blank" rel="noopener"><svg class="resource-icon paper-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.75h8l4 4V21.25H6z" /><path d="M14 2.75v4h4M9 12h6M9 16h6" /></svg> Paper</a>
+          <a class="resource-pill" href="https://github.com/CumulusAlpha/DexBioLab" target="_blank" rel="noopener"><img class="resource-icon" src="media/github-mark.svg" alt="" aria-hidden="true" /> Code</a>
+          <button class="resource-pill" type="button" disabled><img class="resource-icon" src="media/huggingface-logo.svg" alt="" aria-hidden="true" /> Dataset <small>Coming soon</small></button>
+        </div>
+      </section>
+
+          <article class="article">
+          <section class="content-section summary-section" id="summary">
+            <h2>Summary Video</h2>
+            <p class="section-caption">A short overview of the benchmark and its realistic laboratory environments.</p>
+            <video class="summary-video" controls preload="metadata" playsinline aria-label="DexBioLab summary video"><source src="media/videos/summary.mp4" type="video/mp4" /></video>
+          </section>
+
+          <section class="content-section" id="phenomena">
+            <h2>Dynamic Experimental Phenomena</h2>
+            <div class="phenomena-videos" aria-label="Dynamic phenomenon demonstrations">
+              <article class="phenomena-video-card">
+                <h3>Vapor</h3>
+                <video controls preload="metadata" playsinline aria-label="Vapor demonstration"><source src="media/phenomena-videos/vapor.mp4" type="video/mp4" /></video>
+              </article>
+              <article class="phenomena-video-card">
+                <h3>Flame</h3>
+                <video controls preload="metadata" playsinline aria-label="Flame demonstration"><source src="media/phenomena-videos/flame.mp4" type="video/mp4" /></video>
+              </article>
+              <article class="phenomena-video-card">
+                <h3>Bubble</h3>
+                <video controls preload="metadata" playsinline aria-label="Bubble demonstration"><source src="media/phenomena-videos/bubbles.mp4" type="video/mp4" /></video>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-section pipeline-section" id="parallel">
+            <h2>Parallel Simulation</h2>
+            <h3 class="figure-heading">Grasp Synthesis and Parallel Data Collection</h3>
+            <figure class="paper-figure paper-figure-bordered">
+              <img src="media/method-overview.png" alt="Grasp synthesis and parallel data collection pipeline" />
+              <figcaption>The detailed pipeline for preparing validated grasps and collecting trajectories in parallel.</figcaption>
+            </figure>
+          </section>
+
+          <section class="content-section" id="visualizations">
+            <h2>Task Visualizations</h2>
+            <div class="media-grid">
+              <div class="media-card"><span>01</span><strong>Aspirate with Pipette</strong><p>Use a pipette to aspirate liquid from a container.</p><video controls preload="metadata" playsinline><source src="media/task-videos/01-aspirate-with-pipette.mp4" type="video/mp4"></video></div><div class="media-card"><span>02</span><strong>Manipulate Tweezers</strong><p>Use tweezers to grasp and manipulate a small object.</p><video controls preload="metadata" playsinline><source src="media/task-videos/02-manipulate-tweezers.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>03</span><strong>Tighten Tube Cap</strong><p>Rotate a tube cap to tighten it onto the tube.</p><video controls preload="metadata" playsinline><source src="media/task-videos/03-tighten-tube-cap.mp4" type="video/mp4"></video></div><div class="media-card"><span>04</span><strong>Loosen Tube Cap</strong><p>Rotate a tube cap to loosen it from the tube.</p><video controls preload="metadata" playsinline><source src="media/task-videos/14-loosen-tube-cap.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>05</span><strong>Attach Pipette Tip</strong><p>Attach a disposable tip to a pipette.</p><video controls preload="metadata" playsinline><source src="media/task-videos/04-attach-pipette-tip.mp4" type="video/mp4"></video></div><div class="media-card"><span>06</span><strong>Load Centrifuge</strong><p>Place a tube into a centrifuge slot.</p><video controls preload="metadata" playsinline><source src="media/task-videos/05-load-centrifuge.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>07</span><strong>Transfer Tube (Shadow)</strong><p>Use the Shadow hand to transfer a tube to its target location.</p><video controls preload="metadata" playsinline><source src="media/task-videos/06-transfer-tube-shadow.mp4" type="video/mp4"></video></div><div class="media-card"><span>08</span><strong>Transfer Tube (XHand)</strong><p>Use the XHand to transfer a tube to its target location.</p><video controls preload="metadata" playsinline><source src="media/task-videos/13-transfer-tube-xhand.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>09</span><strong>Operate Mixer Panel</strong><p>Operate the controls on a laboratory mixer panel.</p><video controls preload="metadata" playsinline><source src="media/task-videos/07-operate-mixer-panel.mp4" type="video/mp4"></video></div><div class="media-card"><span>10</span><strong>Ignite Bunsen Burner</strong><p>Ignite a Bunsen burner to produce a flame.</p><video controls preload="metadata" playsinline><source src="media/task-videos/08-ignite-bunsen-burner.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>11</span><strong>Close Centrifuge Lid</strong><p>Close the lid of a centrifuge.</p><video controls preload="metadata" playsinline><source src="media/task-videos/09-close-centrifuge-lid.mp4" type="video/mp4"></video></div><div class="media-card"><span>12</span><strong>Heat &amp; Stir Agar Solution</strong><p>Heat and stir an agar solution.</p><video controls preload="metadata" playsinline><source src="media/task-videos/10-heat-stir-agar-solution.mp4" type="video/mp4"></video></div>
+              <div class="media-card"><span>13</span><strong>Close Thermal Cycler Lid</strong><p>Close the lid of a thermal cycler.</p><video controls preload="metadata" playsinline><source src="media/task-videos/11-close-thermal-cycler-lid.mp4" type="video/mp4"></video></div><div class="media-card"><span>14</span><strong>Open Thermal Cycler Lid</strong><p>Open the lid of a thermal cycler.</p><video controls preload="metadata" playsinline><source src="media/task-videos/12-open-thermal-cycler-lid.mp4" type="video/mp4"></video></div>
+            </div>
+          </section>
+
+          <section class="content-section" id="experiments">
+            <h2>Simulation Results</h2>
+            <figure class="paper-figure">
+              <a href="media/experiments/simulation-results.png" target="_blank" rel="noopener" aria-label="Open simulation results table at full size">
+                <img src="media/experiments/simulation-results.png" alt="Table II: Task-wise results for DP, pi 0.5, GR00T-N1.7, and Fast-WAM across 12 representative tasks" loading="lazy" />
+              </a>
+              <figcaption>Mean ± SEM over 3 seeds, with 100 rollouts per seed. Click the table to view it at full size.</figcaption>
+            </figure>
+          </section>
+
+          <section class="content-section" id="real-world-validation">
+            <h2>Real-World Results</h2>
+            <p class="section-caption">Both videos show real-world execution of the same base policy(pi 0.5) fine-tuned using simulation data with different visual backgrounds</p>
+            <div class="gaussian-comparison">
+              <div class="comparison-heading">
+                <h3>Gaussian Background vs. MuJoCo Background</h3>
+                <p>The two conditions differ only in the visual background used for the simulated demonstrations.</p>
+              </div>
+              <div class="comparison-videos">
+                <article class="comparison-card">
+                  <h4>Fine-tuned on Sim Data with 3DGS Backgrounds</h4>
+                  <video controls preload="metadata" playsinline aria-label="Tube insertion trained with Gaussian-background simulations"><source src="media/experiments/tube-insertion-with-gaussian.mp4" type="video/mp4"></video>
+                </article>
+                <article class="comparison-card">
+                  <h4>Fine-tuned on Sim Data with MuJoCo Backgrounds</h4>
+                  <video controls preload="metadata" playsinline aria-label="Tube insertion trained without Gaussian-background simulations"><source src="media/experiments/tube-insertion-without-gaussian.mp4" type="video/mp4"></video>
+                </article>
+              </div>
+              <div class="comparison-result" aria-label="Normalized mean score comparison">
+                <div><strong>66%</strong><span>Gaussian background</span></div>
+                <div class="comparison-versus">vs.</div>
+                <div><strong>17%</strong><span>MuJoCo background</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-section" id="abstract">
+            <h2>Abstract</h2>
+            <p>Automating biological laboratories requires robots to perform dexterous tool interactions
+under realistic visual conditions while handling dynamic experimental phenomena,
+presenting significant challenges for robotic manipulation. To enable systematic
+evaluation under these conditions, we introduce DexBioLab, a simulation benchmark and
+framework for dexterous manipulation in realistic biological laboratory environments.
+DexBioLab comprises 14 tasks across 4 robot embodiments, spanning functional tool use,
+precision manipulation, language-conditioned visual grounding, and instrument operation.
+We introduce controllable dynamic experimental phenomena, including flames, vapor, and
+bubbles, to capture the evolving visual conditions of laboratory procedures. To further
+enhance environmental realism, we develop a hybrid rendering pipeline that integrates
+interactive simulated foreground objects with Gaussian-splatting backgrounds reconstructed
+from 6 real laboratory scenes. For efficient large-scale data generation and evaluation,
+we further build a parallel simulation framework on top of mjlab, proposing Parallel
+Finite-State Machine (PFSM) and integrating batched rendering with decoupled trajectory replay
+for demonstration generation and model-independent closed-loop policy evaluation. Our
+evaluation reveals substantial variation in policy performance across tasks, exposing
+distinct strengths and weaknesses of current manipulation policies. Real-world experiments
+further demonstrate a reduced sim-to-real gap, supporting the validity of DexBioLab for
+realistic manipulation evaluation.</p>
+          </section>
+
+          <footer class="site-footer"><span>DexBioLab</span><a href="#top">Back to top ↑</a></footer>
+          </article>
+        </div>
+      </div>
+    </main>
+    <div class="gaussian-modal" id="gaussian-modal" role="dialog" aria-modal="true" aria-labelledby="gaussian-title" hidden>
+      <div class="gaussian-dialog">
+        <div class="gaussian-toolbar">
+          <div><strong id="gaussian-title">Interactive Gaussian Scene</strong><small>Drag to rotate · Right-drag to pan · Scroll to zoom</small></div>
+          <button class="gaussian-close" type="button" aria-label="Close interactive scene">×</button>
+        </div>
+        <div class="gaussian-stage" id="gaussian-stage"><p class="gaussian-status" id="gaussian-status">Loading scene…</p></div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
